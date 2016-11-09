@@ -10,6 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.steadypathapp.david.scribdweather.MainActivity">
 
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cityText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:id="@+id/sub_button"
+        android:onClick="onSubmit"/>
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,15 +30,6 @@
         android:layout_centerHorizontal="true"
         android:hint="Enter City" />
 
-    <Button
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cityText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:id="@+id/sub_button" />
-
     <ProgressBar
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
@@ -37,4 +38,15 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/progressBar"
         android:visibility="invisible"/>
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/errorText"
+        android:layout_below="@+id/cityText"
+        android:textColor="#F44336"
+        android:layout_alignStart="@+id/cityText" />
+    
 </RelativeLayout>
