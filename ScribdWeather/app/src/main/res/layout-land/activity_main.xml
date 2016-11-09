@@ -48,5 +48,5 @@
         android:layout_below="@+id/cityText"
         android:textColor="#F44336"
         android:layout_alignStart="@+id/cityText" />
-    
+
 </RelativeLayout>
