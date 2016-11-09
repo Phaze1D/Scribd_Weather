@@ -3,29 +3,21 @@ package com.steadypathapp.david.scribdweather;
 
 import org.json.JSONObject;
 
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
 
 /**
  * Created by david on 11/8/16.
  */
 
-public class YahooAPI {
+public interface YahooAPI {
 
-    private static YahooAPI instance;
-    private static String YAHOO_URL = "https://query.yahooapis.com/";
+    public static String URL = "https://query.yahooapis.com";
 
-    public static YahooAPI getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new YahooAPI();
-        }
+    @GET("v1/public/yql")
+    Call<String> getWeather(@Query("q") String query);
 
-        return instance;
-    }
-
-    public static JSONObject query(String city){
-        String query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"" + city + "\")";
-
-        return new JSONObject();
-    }
 }
